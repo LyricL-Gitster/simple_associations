@@ -1,4 +1,10 @@
 SimpleAssociations::Application.routes.draw do
+  resources :orders
+
+  resources :items
+
+  resources :customers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
