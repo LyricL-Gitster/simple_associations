@@ -1,29 +1,29 @@
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<%= form_for(order) do |f| %>
+  <% if order.errors.any? %>
+    <p id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
-      <% @order.errors.full_messages.each do |msg| %>
+      <% order.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
-    </div>
+    </p>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :quantity %><br />
+  <p class="field">
+    <%= f.label :customer_name %>
+    <%= f.text_field :customer_name %>
+  </p>
+  <p class="field">
+    <%= f.label :quantity %>
     <%= f.number_field :quantity %>
-  </div>
-  <div class="field">
-    <%= f.label :item_id %><br />
-    <%= f.number_field :item_id %>
-  </div>
-  <div class="actions">
+  </p>
+  <p class="field">
+    <%= f.label :item %>
+    <%= f.collection_select :item_id, Item.all, :id, :name, :prompt => true %>
+  </p>
+  <p class="actions">
     <%= f.submit %>
-  </div>
+  </p>
 <% end %>

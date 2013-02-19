@@ -1,1 +1,9 @@
 @import "bootstrap";
+
+body {
+	background-color: $yellow;
+}
+
+#content div {
+	min-height:400px;
+}

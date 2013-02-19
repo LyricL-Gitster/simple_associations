@@ -4,7 +4,7 @@ Customer.delete_all
 Item.delete_all
 
 print "Creating Customers"
-customer1 = Customer.create(name:"Big Company", phone:"5554443333", contact:"Betty Sue")
+customer1 = Customer.create(name:"Big Company", phone:"555-444-3333", contact:"Betty Sue")
 print "."
 customer2 = Customer.create(name:"Small Corp.", phone:"123-456-7890", contact:"Jake Smith")
 print "."

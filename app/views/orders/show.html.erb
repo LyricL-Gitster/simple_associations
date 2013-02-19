@@ -1,20 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="span12">
+	<div class="well well-large">
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <b>User:</b>
-  <%= @order.user_id %>
-</p>
+		<p>
+		  <b>Customer Name:</b>
+		  <%= @order.customer.name %>
+		</p>
 
-<p>
-  <b>Quantity:</b>
-  <%= @order.quantity %>
-</p>
+		<p>
+		  <b>Quantity:</b>
+		  <%= @order.quantity %>
+		</p>
 
-<p>
-  <b>Item:</b>
-  <%= @order.item_id %>
-</p>
+		<p>
+		  <b>Item Name:</b>
+		  <%= @order.item.name %>
+		</p>
 
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+		<%= link_to 'Edit', edit_order_path(@order) %> |
+		<%= link_to 'Back', landing_page_path %>
+	</div>
+</div>

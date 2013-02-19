@@ -1,7 +1,7 @@
 SimpleAssociations::Application.routes.draw do
-  resources :orders
+  root :to => 'landing_page#home', as: :landing_page
 
-  resources :items
+  resources :orders
 
   resources :customers
 

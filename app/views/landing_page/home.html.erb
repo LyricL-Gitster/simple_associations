@@ -1,0 +1,12 @@
+<div class="span6">
+	<div class="well well-small">
+		<%= link_to 'New Customer', new_customer_path %>
+		<%= table_for @customers, ['name', 'contact', 'phone'] %>
+	</div>
+</div>
+<div class="span6">
+	<div class="well well-small">
+		<%= link_to 'New Order', new_order_path %>
+		<%= table_for @orders, ['customer:name', 'item:name', 'quantity', 'total_cost'] %>
+	</div>
+</div>

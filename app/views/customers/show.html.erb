@@ -1,20 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="span4">
+	<div class="well well-large">
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @customer.name %>
-</p>
+		<p>
+		  <b>Name:</b>
+		  <%= @customer.name %>
+		</p>
 
-<p>
-  <b>Phone:</b>
-  <%= @customer.phone %>
-</p>
+		<p>
+		  <b>Phone:</b>
+		  <%= @customer.phone %>
+		</p>
 
-<p>
-  <b>Contact:</b>
-  <%= @customer.contact %>
-</p>
+		<p>
+		  <b>Contact:</b>
+		  <%= @customer.contact %>
+		</p>
 
+		<%= link_to 'Edit', edit_customer_path(@customer) %> |
+		<%= link_to 'Back', landing_page_path %>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<div class="span8">
+	<div class="well well-small">
+		<% if @customer.orders.first.nil? %>
+			<center><h3>No orders</h3></center>
+		<% else %>
+			<%= table_for @customer.orders, ['item:name', 'item:cost', 'quantity', 'total_cost'] %>
+		<% end %>
+	</div>
+</div>
