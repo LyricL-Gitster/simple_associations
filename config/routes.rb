@@ -1,9 +1,9 @@
 SimpleAssociations::Application.routes.draw do
   root :to => 'landing_page#home', as: :landing_page
 
-  resources :orders
-
-  resources :customers
+  resources :customers do
+     resources :orders
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

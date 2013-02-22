@@ -2,7 +2,7 @@
 	<div class="well well-large">
 		<h1>Editing order</h1>
 		<%= render 'form', order: @order %>
-		<%= link_to 'Show', @order %> |
+		<%= link_to 'Show', customer_order_path(@order.customer,@order) %> |
 		<%= link_to 'Back', landing_page_path %>
 	</div>
 </div>
